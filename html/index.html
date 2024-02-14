@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Website</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="../js/controllers/controller.js"></script>
+  <script src="../js/services/handler.js"></script>
+  <script src="../js/services/requests.js"></script>
+  <script src="../js/utils/utils.js"></script>
+  <script src="../js/tempValues.js"></script>
+
+
+</head>
+<body>
+  <h1>Welcome to My WebsiteasdasdS</h1>
+
+  <button onclick="doLoginx()">Login</button><br/>
+  <button onclick="createUserx()">Create User</button><br/>
+  <button onclick="changePasswordx()">Confirm Password</button><br/>
+  <button onclick="verifyPVCx()">Verify PVC</button><input type="text" id="pvc" value="1234"><br/>
+  <button onclick="requestPasswordResetx()">requestPasswordReset</button><br/>
+  <button onclick="changeUserInfox()">changeUserInfo</button><br/>
+  <button onclick="listEncuestasx()">listEncuestas</button><br/>
+
+  <script>
+    function doLoginx() {
+      let {username, password} = SUCCESS_LOGIN;
+      doLogin(username, password);
+    }
+
+    function changePasswordx(){
+      let password = "3456"
+      //sessionStorage.removeItem("token");
+      confirmPasswordChange(password, password);
+    }
+
+    function createUserx(){
+      let {username, password, phoneNumber, idPanelista} = FAILED_CREATE_USER;
+      createUser(username, password, phoneNumber, idPanelista);
+    }
+
+    function verifyPVCx(){
+      let pvc = document.getElementById("pvc").value;      
+      verifyPVC(pvc, "test@test.com");
+    }
+
+    function requestPasswordResetx(){
+      let email = "test@test.com";
+      requestPasswordReset(email);
+    }
+
+    function changeUserInfox(){
+      let userInfo = SUCCESS_CHANGE_USER_INFO;
+      changeUserInfo(userInfo);
+    }
+
+    function listEncuestasx(){
+      let email = "test@test.com";
+      listEncuestas(email);
+    }
+
+  </script>
+
+  <script src="index.js"></script>
+
+
+</body>
+</html>
