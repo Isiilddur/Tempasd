@@ -14,49 +14,48 @@
 <body>
   <h1>Welcome to My WebsiteasdasdS</h1>
 
-  <button onclick="doLoginx()">Login</button><br/>
   <button onclick="createUserx()">Create User</button><br/>
-  <button onclick="changePasswordx()">Confirm Password</button><br/>
-  <button onclick="verifyPVCx()">Verify PVC</button><input type="text" id="pvc" value="1234"><br/>
   <button onclick="requestPasswordResetx()">requestPasswordReset</button><br/>
+  <button onclick="verifyPVCx()">Verify PVC</button><br/>
+  <button onclick="changePasswordx()">Confirm Password</button><br/>
+  <button onclick="doLoginx()">Login</button><br/>
   <button onclick="changeUserInfox()">changeUserInfo</button><br/>
   <button onclick="listEncuestasx()">listEncuestas</button><br/>
 
   <script>
     function doLoginx() {
-      let {username, password} = SUCCESS_LOGIN;
-      doLogin(username, password);
+      doLogin(usernameX, currentPasswordX);
     }
 
     function changePasswordx(){
-      let password = "3456"
+      
       //sessionStorage.removeItem("token");
-      confirmPasswordChange(password, password);
+      currentPasswordX = newPasswordX
+      confirmPasswordChange(newPasswordX, newPasswordX);
     }
 
     function createUserx(){
-      let {username, password, phoneNumber, idPanelista} = FAILED_CREATE_USER;
-      createUser(username, password, phoneNumber, idPanelista);
+      let {newUsername, password, phoneNumber, idPanelista} = SUCCESS_CREATE_USER;
+      usernameX = newUsername;
+      currentPasswordX = password;
+      createUser(newUsername, password, phoneNumber, idPanelista);
     }
 
-    function verifyPVCx(){
-      let pvc = document.getElementById("pvc").value;      
-      verifyPVC(pvc, "test@test.com");
+    function verifyPVCx(){ //En el request solo necesita el correo
+      
+      verifyPVC(pvc, usernameX);
     }
 
     function requestPasswordResetx(){
-      let email = "test@test.com";
-      requestPasswordReset(email);
+      requestPasswordReset(usernameX);
     }
 
     function changeUserInfox(){
-      let userInfo = SUCCESS_CHANGE_USER_INFO;
-      changeUserInfo(userInfo);
+      changeUserInfo(SUCCESS_CHANGE_USER_INFO);
     }
 
     function listEncuestasx(){
-      let email = "test@test.com";
-      listEncuestas(email);
+      listEncuestas(usernameX);
     }
 
   </script>

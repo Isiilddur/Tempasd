@@ -1,25 +1,19 @@
-const SUCCESS_LOGIN = {
-    username: "test@tesat.com",
-    password: "1234",
-}
+let usernameX = "test@12345.com";
+const newPasswordX = "1234";
+let currentPasswordX = "78sa90";
 
-const FAILED_LOGIN = {
-    username: "tst@tesat.com",
+let pvc = "2005d907f15b4debbd72dab1911aa3db3baa3982413040df8cda6938bc8e2102"
+
+const CHANGE_PASSWORD ={
     password: "1234",
 }
 
 const SUCCESS_CREATE_USER = {
-    username: "luis.montes@gmail.com",
+    newUsername: "test@12345.com",
     password: "1234",
     phoneNumber: "5525008170",
-    idPanelista: "999"}
-
-const FAILED_CREATE_USER = {
-    username: "luis.masdates@gmail.com",
-    password: "1234",
-    phoneNumber: "5525008170",
+    idPanelista: "9919"
 }
-
 
 const SUCCESS_CHANGE_USER_INFO = {
     "nombre" : "Luis",
@@ -32,3 +26,9 @@ const SUCCESS_CHANGE_USER_INFO = {
     "birthYear":1996
 
 }
+
+/**
+ * TODO: Garantia de que todos los escenarios funcionan
+ * Probar happy path y Fail Path
+ *  Checar issue de usuarios activos despues de cambiar el password only on success
+ */
